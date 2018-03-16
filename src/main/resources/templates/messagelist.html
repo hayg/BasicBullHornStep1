@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bullhorn Challenge 1: MESSAGE</title>
+
+</head>
+<body>
+<a href="/add">Add a message...</a><br />
+<div th:each="message :  ${messages}">
+    <p th:inline="text">Message: [[${message.content}]]</p> <br />
+    <h4 th:inline="text">Posted Date: [[${message.pd}]]</h4> <br />
+    <h4 th:inline="text">Sent by: [[${message.sent}]]</h4>
+    <hr>
+</div>
+</body>
+</html>

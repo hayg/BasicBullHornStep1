@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:fragment="headstuff">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <title>Bullhorn Challenge 1: MESSAGE</title>
+    <style>body {padding-bottom: 70px;}</style>
+</head>
+<body>
+<nav class="navbar navbar-default" th:fragment="navbar">
+    <div class="container-fluid">
+        <div class="form-group" >
+            <form action ="#" th:action="@{/process}" th:object="${message}" method="post">
+                <label for="con">Content:</label><br/>
+                <input type="text" th:field="*{content}" id="con" placeholder="ADD Some Content"><br />
+                <label for="post">Posted Date:</label><br/>
+                <input type="text" th:field="*{pd}" id="post" placeholder="ADD the Posting Date"><br />
+                <label for="by">Sent By:</label><br/>
+                <input type="text" th:field="*{sent}" id="by" placeholder="ADD the Sender"><br />
+                <hr><input type="submit" value="Send"><hr>
+            </form>
+        </div>
+    </div>
+</nav>
+<nav class="navbar navbar-default, navbar-fixed-bottom" th:fragment="footer">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li>Copyright 2018 - Learning By Coding - Java Boot Camp Spring</li>
+        </ul>
+    </div>
+</nav>
+<th:block th:fragments="jslinks">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+</th:block>
+</body>
+</html>
